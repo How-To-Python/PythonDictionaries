@@ -2,7 +2,7 @@ from termcolor import colored
 
 from shannon_utils import color_256, rgb_color
 
-print(color_256("\n============================== Dictionary Basics ==============================",fg=51, bg=46, bold=True, underline=True))
+print(color_256("\n" + "="*30 + " Dictionary Basics " + "="*30,fg=51, bg=46, bold=True, underline=True))
 
 
 '''
