@@ -1,5 +1,6 @@
 import random
 import re
+from termcolor import colored
 '''
 re module
 - used for working with regular expressions, which allow for advanced string searching and manipulation
@@ -17,7 +18,7 @@ re module
 
 '''
 
-print("\n============================== Dictionary Comprehension ==============================")
+print(colored("\n============================== Dictionary Comprehension ==============================", 'yellow', "on_blue", attrs=['bold']))
 
 # =============================================================================
 # 1. Create a new dictionary from an iterable
@@ -27,15 +28,16 @@ Keyword Method: {new_key: new_value for item in list}
 '''
 names_list = ["Tatum", "Clayton", "Reed", "James", "Shannon", "Ace", "Mike", "Jane", "Will", "Lisa"]
 score_dict = {name: random.randint(75, 100) for name in names_list}# this will create a dictionary with names as keys and random scores between 75 and 100 as values
-print(
-"================================================================" \
-"\n1. From the names list create a dictionary with names as" \
-"\nkeys and random scores between 75 and 100 as values"
-"\n================================================================"
-)
-print(f'Names List: {names_list}')
-print(f'Scores Dictionary: {score_dict}')# returns something like {'Tatum': 89, 'Clayton': 86, 'Reed': 98, 'James': 84, 'Shannon': 94, 'Ace': 98, 'Mike': 80, 'Jane': 83, 'Will': 75, 'Lisa': 86}
-print("------------------------------------------------------------")
+print(colored(
+            "\n================================================================" \
+            "\n1. From the names list create a dictionary with names as" \
+            "\nkeys and random scores between 75 and 100 as values"
+            "\n================================================================", 
+            'yellow'
+            ))
+print(colored(f'Names List: {names_list}', 'cyan'))
+print(colored(f'Scores Dictionary: {score_dict}', 'magenta'))# returns something like {'Tatum': 89, 'Clayton': 86, 'Reed': 98, 'James': 84, 'Shannon': 94, 'Ace': 98, 'Mike': 80, 'Jane': 83, 'Will': 75, 'Lisa': 86}
+print(colored("----------------------------------------------", 'yellow'))
 # ===============================================================================
 
 # ======================================================================================================================================
@@ -46,13 +48,15 @@ Keyword Method: {item: value for item in list}
 '''
 sentence = "Do you want to learn python?"
 word_dict = {item: len(item) for item in sentence.split(" ")}
-print("" \
-"\n================================================================ " \
-"\n2. Count the number of letters in each word"
-"\n================================================================")
-print(f'Sentence: "{sentence}"')
-print(word_dict)# returns {'Do': 2, 'you': 3, 'want': 4, 'to': 2, 'learn': 5, 'python?': 7}
-print("------------------------------------------------------------")
+print(colored(
+            "\n================================================================ " \
+            "\n2. Count the number of letters in each word"
+            "\n================================================================", 
+            'yellow'
+            ))
+print(colored(f'Sentence: "{sentence}"', 'cyan'))
+print(colored(f'Word Count Dictionary: {word_dict}', 'magenta'))# returns {'Do': 2, 'you': 3, 'want': 4, 'to': 2, 'learn': 5, 'python?': 7}
+print(colored("--------------------------------------------", 'yellow'))
 # =======================================================================================================================================
 
 
@@ -65,13 +69,15 @@ re module: used to split the sentence using regex to keep only words
 Keyword Method: {item: value for item in list}
 '''
 word_dict2 = {item: len(item) for item in re.findall(r'\b\w+\b', sentence)}
-print(
-"\n==========================================================================" \
-"\n3. Count the number of letters in each word(ignoring punctuation marks)"
-"\n==========================================================================")
-print(f'Sentence: "{sentence}"')
-print(word_dict2)
-print("------------------------------------------------------------")
+print(colored(
+            "\n==========================================================================" \
+            "\n3. Count the number of letters in each word(ignoring punctuation marks)"
+            "\n==========================================================================", 
+            'yellow'
+            ))
+print(colored(f'Sentence: "{sentence}"', 'cyan'))
+print(colored(f'Word Count Dictionary: {word_dict2}', 'magenta'))# returns {'Do': 2, 'you': 3, 'want': 4, 'to': 2, 'learn': 5, 'python': 6}
+print(colored("-----------------------------------", 'yellow'))
 # ===================================================================================================================================================
 
 
@@ -84,14 +90,15 @@ Keyword Method: {key: value_expression for (key, value) in existing_dict.items()
 '''
 weather_c = {"Monday": 12, "Tuesday": 14, "Wednesday": 15, "Thursday": 14, "Friday": 21, "Saturday": 22, "Sunday": 24}
 weather_f = {weekday: (c_degree * 9/5) + 32 for (weekday, c_degree) in weather_c.items()}
-print(
-    "\n=================================================================" \
-    "\n4. Use the celsius values to create a new dictionary (Fahrenheit)"
-    "\n================================================================="
-    )
-print(f'Existing dictionary (Celsius): {weather_c}')
-print(f'New dictionary: {weather_f}')# {'Monday': 53.6, 'Tuesday': 57.2, 'Wednesday': 59.0, 'Thursday': 57.2, 'Friday': 69.8, 'Saturday': 71.6, 'Sunday': 75.2}
-print("------------------------------------------------------------")
+print(colored(
+            "\n=================================================================" \
+            "\n4. Use the celsius values to create a new dictionary (Fahrenheit)"
+            "\n=================================================================", 
+            'yellow'
+            ))
+print(colored(f'Existing dictionary (Celsius): {weather_c}', 'cyan'))
+print(colored(f'New dictionary: {weather_f}', 'magenta'))# {'Monday': 53.6, 'Tuesday': 57.2, 'Wednesday': 59.0, 'Thursday': 57.2, 'Friday': 69.8, 'Saturday': 71.6, 'Sunday': 75.2}
+print(colored("------------------------------------------------------------", 'yellow'))
 # =============================================================================
 
 
@@ -105,14 +112,15 @@ Keyword Method: new_dict = {key_expression: value_expression for item in iterabl
 '''
 score_dict = {'Tatum': 75, 'Clayton': 83, 'Reed': 75, 'James': 92, 'Shannon': 78, 'Ace': 100, 'Mike': 90, 'Jane': 92, 'Will': 84, 'Lisa': 79}
 a_students = {name: score for (name, score) in score_dict.items() if score >= 90}
-print(
-    "\n======================================================================================================" \
-    "\n5. FILTERING WITH IF CLAUSE: Create a new dictionary with the key and value of each student that has a scored above 90" \
-    "\n======================================================================================================"
-    )
-print(f'Existing Dictionary: {score_dict}')
-print(f'New Dictionary: {a_students}')# returns {'James': 92, 'Ace': 100, 'Mike': 90, 'Jane': 92}
-print("------------------------------------------------------------")
+print(colored(
+            "\n======================================================================================================" \
+            "\n5. FILTERING WITH IF CLAUSE: Create a new dictionary with the key and value of each student that has a scored above 90" \
+            "\n======================================================================================================",
+            'yellow'
+            ))
+print(colored(f'Existing Dictionary: {score_dict}', 'cyan'))
+print(colored(f'New Dictionary: {a_students}', 'magenta'))# returns {'James': 92, 'Ace': 100, 'Mike': 90, 'Jane': 92}
+print(colored("------------------------------------------------------------", 'yellow'))
 #**********************************************************************************************************************************
 
 
@@ -123,11 +131,17 @@ print("------------------------------------------------------------")
 Keyword Method: {key: (value_if_true if condition else value_if_false) for item in iterable}
 '''
 pass_failed = {name: ("Pass" if score >= 90 else "Failed") for (name, score) in score_dict.items()}
-print(
-    "\n======================================================================================================" \
-    "\n6. CONDITIONAL VALUE ASSIGNMENT: Create a new dictionary that assigns 'Pass' or 'Failed' based on scores" \
-    "\n======================================================================================================"
-    )
-print(f'Existing Dictionary: {score_dict}')
-print(f'New Dictionary: {pass_failed}')# returns something like {'Tatum': 'Failed', 'Clayton': 'Failed', 'Reed': 'Failed', 'James': 'Pass', 'Shannon': 'Failed', 'Ace': 'Pass', 'Mike': 'Pass', 'Jane': 'Pass', 'Will': 'Failed', 'Lisa': 'Failed'}
-print("------------------------------------------------------------")
+print(colored(
+            "\n======================================================================================================" \
+            "\n6. CONDITIONAL VALUE ASSIGNMENT: Create a new dictionary that assigns 'Pass' or 'Failed' based on scores" \
+            "\n======================================================================================================",
+            'yellow'
+            ))
+print(colored(f'Existing Dictionary: {score_dict}', 'cyan'))
+print(colored(f'New Dictionary: {pass_failed}', 'magenta'))# returns something like {'Tatum': 'Failed', 'Clayton': 'Failed', 'Reed': 'Failed', 'James': 'Pass', 'Shannon': 'Failed', 'Ace': 'Pass', 'Mike': 'Pass', 'Jane': 'Pass', 'Will': 'Failed', 'Lisa': 'Failed'}
+print(colored("------------------------------------------------------------", 'yellow'))
+
+
+#    print(colored("This text is red", "red"))
+#     print(colored("This text is green and bold", "green", attrs=["bold"]))
+#     print(colored("This text has a yellow background", "white", "on_yellow"))
