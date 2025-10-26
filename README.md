@@ -10,7 +10,6 @@
 5. **Dictionary comprehensions** - Elegant way to create dictionaries
 6. **Many built-in methods** - get(), keys(), values(), items(), etc.
 
-
 ### 📊 Python Data Structures Comparison
 
 | Data Structure | Ordered | Mutable | Duplicates | Indexed | Use Case |
@@ -27,7 +26,6 @@
 - **Basic Python knowledge** (variables, functions, basic syntax)
 - **Jupyter Notebook** (optional, for notebook experience)
 
-
 ## 🎓 Learning Materials
 
 - **[Python Dictionaries Command-Line Guide](./CommandLine/python_dictionary_complete_guide.py)**
@@ -35,7 +33,6 @@
 - **[Python Dictionaries Interactive Guide](./Notebooks/PYTHON_DICTIONARY_INTERACTIVE_NOTEBOOK_GUIDE.md)**
     - Jupyter notebooks with hands-on examples
 - **Existing code examples** - Real-world implementations and demonstrations
-
 
 ### 📖 What's Next?
 
